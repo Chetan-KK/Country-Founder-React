@@ -11,7 +11,6 @@ function App() {
   const fetchAPI = async ()=>{
     const fetchedData = await fetch('https://restcountries.com/v3.1/all')
     const convertedData = await fetchedData.json()
-    console.log(convertedData);
     setData(convertedData)
   }
 
