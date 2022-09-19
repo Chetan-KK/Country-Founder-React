@@ -1,0 +1,104 @@
+.flex {
+  display: flex;
+  align-items: center;
+}
+.country {
+  position: relative;
+  /* height: 15rem; */
+  padding: 1rem 0;
+  color: white;
+}
+.country::before,
+.country::after {
+  content: "";
+  position: absolute;
+  height: 2%;
+  width: 0%;
+  background-color: rgba(255, 255, 255, 0.445);
+  transition: 400ms;
+}
+.country::before {
+  top: 0;
+  left: 0;
+}
+.country::after {
+  bottom: 0;
+  right: 0;
+}
+.country:hover::before,
+.country:hover::after {
+  width: 100%;
+}
+.country .bg {
+  /* background-image: url("https://flagcdn.com/ck.svg"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: -2;
+}
+.country .bg::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-image: linear-gradient(15deg, black, rgba(0, 0, 0, 0.384));
+}
+.header {
+  justify-content: space-between;
+}
+.country .header .left .name {
+  font-size: 3rem;
+  z-index: 2;
+  text-shadow: 0 0 10px rgb(97, 237, 255);
+  font-family: var(--ff-bebas);
+  word-spacing: 0.3rem;
+  margin: 0 1rem;
+}
+.coat {
+  width: 3rem;
+}
+.currencies .currency {
+  flex-direction: column;
+  margin: 0 0.5rem;
+}
+.currency .symbol {
+  text-shadow: 0 0 20px white, 0 0 20px white;
+  font-size: 1.5rem;
+}
+.currency .name {
+  font-family: var(--ff-teko);
+  font-size: 1.2rem;
+}
+.main {
+  margin: 1rem;
+  justify-content: space-between;
+  align-items: flex-end !important;
+  font-family: var(--ff-oswald);
+}
+@media screen and (max-width: 500px) {
+  .country {
+    padding: 1vh 1vw;
+  }
+  .country .header .left .name {
+    font-size: 7vw;
+  }
+  .coat {
+    width: 7vw;
+  }
+  .currencies .currency {
+    margin: 0 2vw;
+  }
+  .main {
+    align-items: flex-start !important;
+    flex-direction: column;
+  }
+  .main .right {
+    /* background-color: red; */
+    word-wrap: break-word;
+  }
+}
