@@ -52,13 +52,13 @@ export default ({nameCommon,nameOfficial,altSpellings,area,capital,coatOfArms,co
             <main className="main flex">
           <div className="info">
             <div>Capital: {capital}</div>
-            <div>population: {population}</div>
-            <div>area: {area} KM<sup>2</sup></div>
-            <div>region: {region}</div>
-            <div>subregion: {subregion}</div>
-            <div>languages: <Languages/></div>
+            <div>Population: {population}</div>
+            <div>Area: {area} KM<sup>2</sup></div>
+            <div>Region: {region}</div>
+            <div>Sub region: {subregion}</div>
+            <div>Languages: <Languages/></div>
           </div>
-          <div className="right">timeZones: {timezones.map(timezone=>(`${timezone}, `))}</div>
+          <div className="right">Time Zones: {timezones.map(timezone=>(`${timezone}, `))}</div>
         </main>
         </div>
     )
