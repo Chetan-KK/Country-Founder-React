@@ -12,13 +12,19 @@ function App() {
     const fetchedData = await fetch('https://restcountries.com/v3.1/all')
     const convertedData = await fetchedData.json()
     setData(convertedData)
+    setLoaded(true)
   }
 
   const [data,setData] = useState([])
+
+  const [loaded,setLoaded] =useState(false)
   
   
   return (
     <div className="App">
+      <div className="loading flex" style={loaded?{display:'none'}:{display:'fixed'}}>
+        <div className="loadingAnim"></div>
+      </div>
       <div className="Countries">
       {data.map(country=>(
         <Country 
