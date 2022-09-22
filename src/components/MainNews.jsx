@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
-import News from "./news";
+import News from "./News";
 
 export default function MainNews() {
   const { id } = useParams();
