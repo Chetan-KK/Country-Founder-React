@@ -27,7 +27,7 @@
   align-items: center;
 }
 a {
-  font-weight: 500;
+  /* font-weight: 500; */
   color: #646cff;
   text-decoration: inherit;
 }
@@ -40,7 +40,21 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
-
+button {
+  padding: 0.5rem 2rem;
+  font-size: 1.3rem;
+  background-color: rgba(0, 0, 0, 0.356);
+  backdrop-filter: blur(4px);
+  border: none;
+  box-shadow: 0 0 0px 1px white;
+  transition: 200ms ease;
+  /* border-radius: 10px; */
+  margin: 1rem 0;
+  cursor: pointer;
+}
+button:hover {
+  box-shadow: 2px 2px 0px 3px white;
+}
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

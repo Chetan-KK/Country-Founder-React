@@ -2,14 +2,23 @@
   display: flex;
   align-items: center;
 }
-.country {
+* {
+  /* box-shadow: 0 0 1px 1px; */
+}
+.back {
+  position: fixed;
+  z-index: 9999;
+}
+.section {
   position: relative;
-  /* height: 15rem; */
   padding: 1rem 0;
   color: white;
 }
-.country::before,
-.country::after {
+.section:hover {
+  color: white;
+}
+.section::before,
+.section::after {
   content: "";
   position: absolute;
   height: 2%;
@@ -17,20 +26,19 @@
   background-color: rgba(255, 255, 255, 0.445);
   transition: 400ms;
 }
-.country::before {
+.section::before {
   top: 0;
   left: 0;
 }
-.country::after {
+.section::after {
   bottom: 0;
   right: 0;
 }
-.country:hover::before,
-.country:hover::after {
+.section:hover::before,
+.section:hover::after {
   width: 100%;
 }
-.country .bg {
-  /* background-image: url("https://flagcdn.com/ck.svg"); */
+.section .bg {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -40,24 +48,41 @@
   left: 0;
   height: 100%;
   z-index: -2;
+  transition: 200ms;
 }
-.country .bg::before {
+.section:hover .moveBg {
+  background-position: 10px;
+}
+.section .bg::before {
   content: "";
   height: 100%;
   width: 100%;
   position: absolute;
   background-image: linear-gradient(15deg, black, rgba(0, 0, 0, 0.384));
 }
-.header {
+.section .header {
   justify-content: space-between;
+  padding: 0 1rem;
 }
-.country .header .left .name {
+.section .header .title {
   font-size: 3rem;
   z-index: 2;
   text-shadow: 0 0 10px rgb(97, 237, 255);
   font-family: var(--ff-bebas);
   word-spacing: 0.3rem;
-  margin: 0 1rem;
+  line-height: 1;
+}
+.section .main-link {
+  color: white;
+  text-decoration: underline;
+}
+.section .main-link:hover {
+  color: rgb(207, 207, 207);
+}
+.section .header .right {
+  font-family: var(--ff-teko);
+  width: 140px;
+  text-align: center;
 }
 .coat {
   width: 3rem;
@@ -80,11 +105,15 @@
   align-items: flex-end !important;
   font-family: var(--ff-oswald);
 }
+.main-news {
+  flex-direction: column;
+  align-items: flex-start !important;
+}
 @media screen and (max-width: 500px) {
-  .country {
+  .section {
     padding: 1vh 1vw;
   }
-  .country .header .left .name {
+  .section .header .left .name {
     font-size: 7vw;
   }
   .coat {
