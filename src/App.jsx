@@ -52,7 +52,7 @@ function App() {
       <div className="App">
         <div
           className="loading flex"
-          style={loaded ? { top: "-100vw" } : { top: "0" }}>
+          style={loaded ? { top: "-100vh" } : { top: "0" }}>
           <div className="loadingAnim"></div>
         </div>
         <Routes>
