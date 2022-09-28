@@ -1,4 +1,5 @@
 import React from "react";
+import "./css/Country.css";
 
 export default function News({
   title,
@@ -14,7 +15,7 @@ export default function News({
   return (
     <div className="section">
       <a href={url} target="_BLANK" className="main-link">
-        <div className="bg moveBg" style={bgImg}></div>
+        <div className="bg moveBg" style={bgImg ? bgImg : "/logo.png"}></div>
         <header className="header flex">
           <div className="title">{title}</div>
           <div className="right">

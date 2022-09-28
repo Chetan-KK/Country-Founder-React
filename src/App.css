@@ -5,19 +5,30 @@
   height: 100vh;
   width: 100vw;
   position: fixed;
-  transition: 1s ease-out;
+  transition: 200ms ease-out;
+
   left: 0;
-  background-color: #343434;
+  background-color: #34343475;
   z-index: 9999999999999999;
+  backdrop-filter: blur(20px);
   justify-content: center;
 }
 .loadingAnim {
-  height: 20vw;
-  width: 20vw;
+  height: 15vw;
+  width: 15vw;
   border-radius: 100%;
-  border: 2px solid #454545;
-  border-top-color: white;
-  animation: loading 1s infinite linear;
+  border: 10px solid #454545;
+  border-top-color: rgb(255, 148, 148);
+  animation: loading 1s infinite linear, loadingColor 1s infinite linear;
+}
+@keyframes loadingColor {
+  0%,
+  100% {
+    border-top-color: rgb(255, 0, 0);
+  }
+  50% {
+    border-top-color: rgb(255, 94, 0);
+  }
 }
 
 @keyframes loading {

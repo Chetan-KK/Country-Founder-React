@@ -22,11 +22,13 @@ function App() {
   const [loaded, setLoaded] = useState(false);
 
   function Home() {
+    let uniqueKey = 0;
+
     return (
       <div className="Countries">
         {data.map((country) => (
           <Country
-            key={country.name.common}
+            key={uniqueKey++}
             nameCommon={country.name.common}
             nameOfficial={country.name.official}
             altSpellings={country.altSpellings}
@@ -52,7 +54,8 @@ function App() {
       <div className="App">
         <div
           className="loading flex"
-          style={loaded ? { top: "-100vh" } : { top: "0" }}>
+          style={loaded ? { top: "0" } : { top: "0" }}
+        >
           <div className="loadingAnim"></div>
         </div>
         <Routes>
