@@ -54,7 +54,7 @@ function App() {
       <div className="App">
         <div
           className="loading flex"
-          style={loaded ? { top: "0" } : { top: "0" }}
+          style={loaded ? { top: "-100vh" } : { top: "0" }}
         >
           <div className="loadingAnim"></div>
         </div>
