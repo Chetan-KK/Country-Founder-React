@@ -11,7 +11,9 @@ function App() {
   }, []);
 
   const fetchAPI = async () => {
-    const fetchedData = await fetch("https://restcountries.com/v3.1/all");
+    const fetchedData = await fetch(
+      "https://restcountries.com/v3.1/all?fields=name,name%20%3E%20official/common,altSpellings,area,capital,coatOfArms,continents,currencies,demonym,flag,languages,population,region,subregion,timezones"
+    );
     const convertedData = await fetchedData.json();
     setData(convertedData);
     setLoaded(true);
@@ -38,7 +40,7 @@ function App() {
             continents={country.continents}
             currencies={country.currencies}
             demonyms={country.demonyms}
-            flag={country.flags}
+            flag={country.flag}
             languages={country.languages}
             population={country.population}
             region={country.region}

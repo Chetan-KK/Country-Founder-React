@@ -21,7 +21,7 @@ export default ({
   timezones,
 }) => {
   const bgFlag = {
-    backgroundImage: `url("${flag["svg"]}")`,
+    backgroundImage: `url("https://flagpedia.net/data/flags/w580/${flag}.webp")`,
   };
 
   function Currencies() {
@@ -70,7 +70,8 @@ export default ({
         </div>
         <Link
           to={`/Country-Founder-React/${nameCommon}`}
-          state={{ from: "occupation" }}>
+          state={{ from: "occupation" }}
+        >
           <button className="newsBut">See news</button>
         </Link>
         <div className="right">
